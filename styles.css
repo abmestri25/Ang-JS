@@ -26,6 +26,10 @@ th{
     text-align: center;
     cursor: pointer;
 }
+
+input {
+    text-align: center;
+}
 button{
     border: none;
     outline: none;

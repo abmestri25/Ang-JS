@@ -39,35 +39,44 @@ Sort By :
     <option value="-salary"> Salary DESC</option>
 </select> 
    <br/> -->
+
+   <br>
+   <!-- for column wise search -->
+   <!-- <input type="text" ng-model="searchText.city" placeholder="Search Employees..." > -->
+   <!-- for all fields -->
+   <input type="text" ng-model="searchText.city" placeholder="Search Employees..." >
+   <br>
    <table>
     <thead>
         <tr>
             <th ng-click="sortData('name')">
                 Name <div ng-class="getSortClass('name')"></div>
             </th>
-            <th ng-click="sortData('dateOfBirth')">
-                Date Of Birth <div ng-class="getSortClass('dateOfBirth')"></div>
-            </th>
+           
             <th ng-click="sortData('gender')">
                 Gender <div ng-class="getSortClass('gender')"></div>
             </th>
             <th ng-click="sortData('salary')">
                 Salary(number filter) <div ng-class="getSortClass('salary')"></div>
             </th>
-            <th ng-click="sortData('salary')">
-                Salary (currency filter) <div ng-class="getSortClass('salary')"></div>
+           
+            <th ng-click="sortData('city')">
+                City <div ng-class="getSortClass('city')"></div>
             </th>
            
         </tr>
     </thead>
-    <tr ng-repeat = "emp in employees | orderBy : sortCol : reverseSort ">
-        <td>{{emp.name | uppercase}}</td>
-        <td>{{emp.dateOfBirth | date:"dd/MM/yyyy"}}</td>
+    <tr ng-show="employees" ng-repeat = "emp in employees | filter : searchText ">
+        <td>{{emp.name}}</td>
         <td>{{emp.gender | lowercase}}</td>
-        <td>{{emp.salary | number:2}}</td>
-        <td>{{emp.salary | currency :'₹':1}}</td>
-        
+        <td>{{emp.salary | currency:'₹'}}</td>
+        <td>{{emp.city}}</td>
     </tr>
+    
+
+   
+
+
 </table>
 
 

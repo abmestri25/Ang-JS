@@ -18,14 +18,15 @@ angular.module("MyModule",[])
 
 
     var employees = [
-        {name : 'Ben',dateOfBirth : new Date('November 13,1950'),gender:'Male',salary : 55000.45},
-        {name : 'Mark',dateOfBirth : new Date('March 3,1940'),gender:'Male',salary : 552400.45},
-        {name : 'Sara',dateOfBirth : new Date('February 15,1930'),gender:'Female',salary : 35000.45},
-        {name : 'John',dateOfBirth : new Date('April 1,1920'),gender:'Male',salary : 25000.45},
-        {name : 'Mia',dateOfBirth : new Date('January 20,1910'),gender:'Female',salary : 15000.45},
+        {name : 'Ben',gender:'Male',salary : 55000.45,city:'London'},
+        {name : 'Mark',gender:'Male',salary : 552400.45,city:'Mumbai'},
+        {name : 'Sara',gender:'Female',salary : 35000.45,city:'USA'},
+        {name : 'John',gender:'Male',salary : 25000.45,city:'Chennai'},
+        {name : 'Mia',gender:'Female',salary : 15000.45,city:'London'},
     ]
 
     $scope.employees = employees;
+    // $scope.searchText = '';
     $scope.sortCol = 'name';
     $scope.reverseSort = false;
 
