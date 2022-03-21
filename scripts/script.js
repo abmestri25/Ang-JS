@@ -1,4 +1,4 @@
-angular.module("MyModule",[])
+var app = angular.module("MyModule",[])
 .controller("myController",function($scope){
     // var technologies = [
     //     {name : 'C#',likes : 0,dislikes:0},
@@ -18,11 +18,11 @@ angular.module("MyModule",[])
 
 
     var employees = [
-        {name : 'Ben',gender:'Male',salary : 55000.45,city:'London'},
-        {name : 'Mark',gender:'Male',salary : 552400.45,city:'Mumbai'},
-        {name : 'Sara',gender:'Female',salary : 35000.45,city:'USA'},
-        {name : 'John',gender:'Male',salary : 25000.45,city:'Chennai'},
-        {name : 'Mia',gender:'Female',salary : 15000.45,city:'London'},
+        {name : 'Ben',gender:1,salary : 55000.45,city:'London'},
+        {name : 'Mark',gender:1,salary : 552400.45,city:'Mumbai'},
+        {name : 'Sara',gender:2,salary : 35000.45,city:'USA'},
+        {name : 'John',gender:1,salary : 25000.45,city:'Chennai'},
+        {name : 'Mia',gender:3,salary : 15000.45,city:'London'},
     ]
 
     $scope.employees = employees;
