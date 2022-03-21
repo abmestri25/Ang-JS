@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html ng-app="MyModule" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AngularJS</title>
+    <script src="./scripts/angular.js"></script>
+    <script src="./scripts/script.js"></script>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body ng-controller="myController" >
+   <!-- <table>
+       <thead>
+           <tr>
+               <th>Name</th>
+               <th>Likes</th>
+               <th>Dislikes</th>
+               <th>Action</th>
+           </tr>
+       </thead>
+       <tr ng-repeat = "tech in technologies">
+           <td>{{tech.name}}</td>
+           <td>{{tech.likes}}</td>
+           <td>{{tech.dislikes}}</td>
+           <td><button class="like" ng-click="incrementLikes(tech)">Like</button>
+            <button class="dislike" ng-click="incrementDislikes(tech)">Dislike</button>
+        </td>
+       </tr>
+   </table> -->
+<input type="number" step="1" min="0" max="5" ng-model="rowLimit" name="" id="">
+<select type="number" step="1" min="0" max="5" ng-model="rowLimit" name="" id="">
+   <br/>
+   <table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Date Of Birth</th>
+            <th>Gender</th>
+            <th>Salary(number filter)</th>
+            <th>Salary (currency filter)</th>
+        </tr>
+    </thead>
+    <tr ng-repeat = "emp in employees | limitTo : rowLimit">
+        <td>{{emp.name | uppercase}}</td>
+        <td>{{emp.dateOfBirth | date:"dd/MM/yyyy"}}</td>
+        <td>{{emp.gender | lowercase}}</td>
+        <td>{{emp.salary | number:2}}</td>
+        <td>{{emp.salary | currency :'₹':1}}</td>
+        
+    </tr>
+</table>
+
+
+</body>
+</html>
