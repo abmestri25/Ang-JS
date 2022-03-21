@@ -44,7 +44,13 @@ Sort By :
    <!-- for column wise search -->
    <!-- <input type="text" ng-model="searchText.city" placeholder="Search Employees..." > -->
    <!-- for all fields -->
-   <input type="text" ng-model="searchText.city" placeholder="Search Employees..." >
+   <!-- <input type="text" ng-model="searchText.name" placeholder="Search by name" />
+   <br>
+   <input type="text" ng-model="searchText.city" placeholder="Search by city" />
+   <br> -->
+   <!-- Exact Match : <input type="checkbox" ng-model="exact_match" /> -->
+   <br>
+   <input type="text" ng-model="searchText" placeholder="Search by name and city" />
    <br>
    <table>
     <thead>
@@ -66,7 +72,7 @@ Sort By :
            
         </tr>
     </thead>
-    <tr ng-show="employees" ng-repeat = "emp in employees | filter : searchText ">
+    <tr ng-show="employees" ng-repeat = "emp in employees | filter : search">
         <td>{{emp.name}}</td>
         <td>{{emp.gender | lowercase}}</td>
         <td>{{emp.salary | currency:'₹'}}</td>
