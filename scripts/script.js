@@ -26,6 +26,20 @@ angular.module("MyModule",[])
     ]
 
     $scope.employees = employees;
-    $scope.rowLimit = 2;
+    $scope.sortCol = 'name';
+    $scope.reverseSort = false;
+
+    $scope.sortData = function(col){
+        $scope.reverseSort = ($scope.sortCol == col) ? !$scope.reverseSort : false;
+        $scope.sortCol = col;
+    }
+
+    $scope.getSortClass = function(col){
+        if($scope.sortCol == col){
+            return $scope.reverseSort ? 'arrow-down' : 'arrow-up';
+        }
+        return '';
+    }
+
 
 })
